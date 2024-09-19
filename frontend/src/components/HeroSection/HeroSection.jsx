@@ -4,7 +4,7 @@ import mainimg from "../../assets/Hero/heroimg.png";
 const HeroSection = () => {
   return (
     <div className="w-full bg-gray-100">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center lg:space-x-20 p-4">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center lg:space-x-20 px-4">
         {/* Text Content */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mt-4">
@@ -36,7 +36,7 @@ const HeroSection = () => {
         </div>
 
         {/* Image */}
-        <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
+        <div className="w-full lg:w-1/2">
           <img src={mainimg} alt="hero" className="w-full h-auto" />
         </div>
       </div>
