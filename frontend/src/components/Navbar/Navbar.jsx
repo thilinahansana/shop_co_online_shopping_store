@@ -33,7 +33,7 @@ const Navbar = () => {
   }, [dropdownRef]);
 
   return (
-    <nav className="w-full">
+    <nav className="w-full z-50">
       <div className="container mx-auto flex justify-between items-center px-4 py-8">
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
@@ -64,7 +64,7 @@ const Navbar = () => {
                 animate="visible"
                 exit="exit"
                 variants={dropdownVariants}
-                className="absolute bg-white shadow-lg rounded-lg p-4 mt-4"
+                className="absolute z-30 bg-white shadow-lg rounded-lg p-4 mt-4"
               >
                 <ul className="space-y-2">
                   <li>
@@ -129,7 +129,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "100%" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute md:hidden  flex flex-col space-y-4 p-4 bg-white w-full"
+            className="absolute z-30 md:hidden  flex flex-col space-y-4 p-4 bg-white w-full"
           >
             {/* Shop with Dropdown */}
             <div className="relative">

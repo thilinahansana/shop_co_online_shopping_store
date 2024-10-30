@@ -1,25 +1,25 @@
-import Brands from "./components/Brands/Brands";
-import DressStyle from "./components/DressStyle/DressStyle";
-import Footer from "./components/Footer/Footer";
-import HappyCustomers from "./components/HappyCustomers/HappyCustomers";
-import HeroSection from "./components/HeroSection/HeroSection";
-import Navbar from "./components/Navbar/Navbar";
-import NewArrivals from "./components/NewArrivals/NewArrivals";
-import Newsletter from "./components/Newsletter/Newsletter";
-import TopSelling from "./components/TopSelling/TopSelling";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./pages/Auth/Protect/ProtectedRoute";
+import Login from "./pages/Auth/Login/Login";
+import SignUp from "./pages/Auth/SignUp/SignUp";
+import { Main } from "./pages/Main/Main";
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <Brands />
-      <NewArrivals />
-      <TopSelling />
-      <DressStyle />
-      <HappyCustomers />
-      <Newsletter />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          {/* Protect the dashboard route */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/home" element={<Main />} />
+          </Route>
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
+
+export default App;

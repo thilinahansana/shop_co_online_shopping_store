@@ -1,0 +1,16 @@
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+.DS_Store
+
+# Ignore environment variables files
+.env
+
+# Ignore build outputs
+bin/
+obj/
+**/appsettings.json
+/ShopCoAPI.API/shopco-f3341-firebase-adminsdk-k3hzb-73e8234a79.json
